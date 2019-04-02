@@ -70,9 +70,24 @@ void Display_dot(int CC)
   matrix.setTextSize(1);
   matrix.setTextWrap(true);  // we dont want text to wrap so it scrolls nicely
   matrix.setTextColor(LED_ON);
-  matrix.setRotation(1);
-  matrix.clear();
-  matrix.setCursor(3, 0);
-  matrix.print(text);
-  matrix.writeDisplay();
+  if (text < 100)
+  {
+    matrix.setRotation(1);
+    matrix.clear();
+    matrix.setCursor(3, 0);
+    matrix.print(text);
+    matrix.writeDisplay();
+  }
+  else
+  {
+    for (int8_t x = 40; x >= -32; x--)
+    {
+      matrix.setRotation(1);
+      matrix.clear();
+      matrix.setCursor(x, 0);
+      matrix.print(text);
+      matrix.writeDisplay();
+      delay(50);
+    }
+  }
 }
