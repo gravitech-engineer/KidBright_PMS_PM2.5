@@ -175,8 +175,8 @@ plantower_pms7003::plantower_pms7003(void)///int tx_io, int rx_io){
 	///tx = tx_io;
 	///rx = rx_io;
 	tx = GPIO_NUM_19;
-  rx = GPIO_NUM_23;
-	// rx = GPIO_NUM_4; 
+  //rx = GPIO_NUM_23;
+	 rx = GPIO_NUM_4; 
 }
 
 void plantower_pms7003::init(void) {
